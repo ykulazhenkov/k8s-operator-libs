@@ -21,6 +21,10 @@ const (
 	UpgradeStateLabelKeyFmt = "nvidia.com/%s-driver-upgrade-state"
 	// UpgradeSkipNodeLabelKeyFmt is the format of the node label boolean key indicating to skip driver upgrade
 	UpgradeSkipNodeLabelKeyFmt = "nvidia.com/%s-driver-upgrade.skip"
+	// UpgradeWaitForSafeDriverLoadAnnotationKeyFmt is the format of the node annotation key indicating that
+	// the driver is waiting for safe load. Meaning node should be cordoned and workloads should be removed from the
+	// node before the driver can continue to load.
+	UpgradeWaitForSafeDriverLoadAnnotationKeyFmt = "nvidia.com/%s-driver-upgrade.driver-wait-for-safe-load"
 	// UpgradeInitialStateAnnotationKeyFmt is the format of the node annotation indicating node was unschedulable at beginning of upgrade process
 	UpgradeInitialStateAnnotationKeyFmt = "nvidia.com/%s-driver-upgrade.node-initial-state.unschedulable"
 	// UpgradeWaitForPodCompletionStartTimeAnnotationKeyFmt is the format of the node annotation indicating start time for waiting on pod completions
